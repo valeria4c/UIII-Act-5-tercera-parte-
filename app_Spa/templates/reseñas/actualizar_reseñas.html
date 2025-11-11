@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Actualizar Reseña{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-8 col-lg-7">
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-warning text-dark text-center">
+                <h3 class="mb-0">Actualizar Reseña #{{ reseña.id_reseña }}</h3>
+            </div>
+            <div class="card-body p-4">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="usuario" class="form-label">Usuario:</label>
+                        <select class="form-select" id="usuario" name="usuario" required>
+                            {% for user in usuarios %}
+                                <option value="{{ user.id_usuario }}" {% if user == reseña.usuario %}selected{% endif %}>
+                                    {{ user.nombre_completo }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pedido" class="form-label">Pedido:</label>
+                        <select class="form-select" id="pedido" name="pedido" required>
+                            {% for ped in pedidos %}
+                                <option value="{{ ped.id_pedido }}" {% if ped == reseña.pedido %}selected{% endif %}>
+                                    #{{ ped.id_pedido }} - {{ ped.servicio }} ({{ ped.usuario.nombre_completo }})
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="titulo" class="form-label">Título de la Reseña:</label>
+                        <input type="text" class="form-control" id="titulo" name="titulo" value="{{ reseña.titulo }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="comentario" class="form-label">Comentario:</label>
+                        <textarea class="form-control" id="comentario" name="comentario" rows="4" required>{{ reseña.comentario }}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="calificacion" class="form-label">Calificación (1-5):</label>
+                        <input type="number" class="form-control" id="calificacion" name="calificacion" min="1" max="5" value="{{ reseña.calificacion }}" required>
+                    </div>
+                    <div class="form-check mb-4">
+                        <input class="form-check-input" type="checkbox" id="visible" name="visible" {% if reseña.visible %}checked{% endif %}>
+                        <label class="form-check-label" for="visible">
+                            Visible públicamente
+                        </label>
+                    </div>
+                    <div class="d-grid gap-2 mt-4">
+                        <button type="submit" class="btn btn-warning btn-lg">Actualizar Reseña</button>
+                        <a href="{% url 'ver_reseñas' %}" class="btn btn-outline-secondary btn-lg">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

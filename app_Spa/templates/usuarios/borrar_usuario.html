@@ -1,0 +1,32 @@
+<!-- app_Spa/templates/usuarios/borrar_usuario.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Borrar Usuario{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-sm mt-5 border-danger">
+            <div class="card-header bg-danger text-white">
+                <h3 class="mb-0"><i class="fas fa-trash-alt me-2"></i>Confirmar Eliminación de Usuario</h3>
+            </div>
+            <div class="card-body">
+                <p class="lead">¿Estás seguro de que deseas eliminar al usuario <strong>{{ usuario.nombre_completo }}</strong> (ID: {{ usuario.id_usuario }})?</p>
+                <p class="text-danger">¡Esta acción es irreversible!</p>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fas fa-trash-alt me-2"></i>Sí, Eliminar Usuario
+                        </button>
+                        <a href="{% url 'ver_usuarios' %}" class="btn btn-outline-secondary">
+                            <i class="fas fa-times-circle me-2"></i>Cancelar
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

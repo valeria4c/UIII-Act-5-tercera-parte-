@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+        <a class="navbar-brand text-primary" href="{% url 'inicio_spa' %}">
+            <i class="bi bi-tools me-2"></i>Sistema de Administración Spa
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'inicio_spa' %}">
+                        <i class="bi bi-house-door-fill me-1"></i>Inicio
+                    </a>
+                </li>
+
+                <!-- Usuarios -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkUsuarios" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle me-1"></i>Usuarios
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkUsuarios">
+                        <li><a class="dropdown-item" href="{% url 'agregar_usuario' %}">Agregar Usuario</a></li>
+                        <li><a class="dropdown-item" href="{% url 'ver_usuarios' %}">Ver Usuarios</a></li>
+                        <li><a class="dropdown-item" href="{% url 'ver_usuarios' %}">Actualizar Usuarios</a></li>
+                        <li><a class="dropdown-item" href="{% url 'ver_usuarios' %}">Borrar Usuario</a></li>
+                    </ul>
+                </li>
+
+                <!-- Pedidos -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkPedidos" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-journal-check me-1"></i>Pedidos
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkPedidos">
+                        <li><a class="dropdown-item" href="{% url 'agregar_pedidos' %}">Agregar Pedido</a></li>
+                        <li><a class="dropdown-item" href="{% url 'ver_pedidos' %}">Ver Pedidos</a></li>
+                        <li><a class="dropdown-item" href="{% url 'ver_pedidos'%}">Actualizar Pedido</a></li>
+                        <li><a class="dropdown-item" href="{% url 'ver_pedidos'%}">Borrar Pedido</a></li>
+                    </ul>
+                </li>
+
+                <!-- Reseñas -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkReseñas" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-star-fill me-1"></i>Reseñas
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkReseñas">
+                        <li><a class="dropdown-item" href="{% url 'agregar_reseñas'%}">Agregar Reseña</a></li>
+                        <li><a class="dropdown-item" href="{% url 'ver_reseñas'%}">Ver Reseñas</a></li>
+                        <li><a class="dropdown-item" href="{% url 'ver_reseñas'%}">Actualizar Reseña</a></li>
+                        <li><a class="dropdown-item" href="{% url 'ver_reseñas'%}">Borrar Reseña</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

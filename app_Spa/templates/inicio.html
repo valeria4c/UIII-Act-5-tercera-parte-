@@ -1,0 +1,46 @@
+<!-- app_Spa/templates/inicio.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Inicio - Spa Administrativo{% endblock %}
+
+{% block content %}
+<div class="p-5 mb-4 bg-light rounded-3 text-center">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold text-dark-spa">Bienvenido al Sistema de Administración Spa</h1>
+        <p class="col-md-8 fs-4 mx-auto text-dark-spa">
+            Aquí podrás gestionar de manera eficiente a tus usuarios, pedidos y reseñas para ofrecer la mejor experiencia a tus clientes.
+        </p>
+        <hr class="my-4">
+        <p class="lead">
+            Explora las funcionalidades del sistema a través del menú de navegación.
+        </p>
+    </div>
+</div>
+
+<div class="row g-4 mb-5">
+    <div class="col-md-6">
+        <h2 class="text-dark-spa">Sobre Nuestro Spa</h2>
+        <p class="lead">
+            Nuestro sistema está diseñado para optimizar la gestión interna de tu centro de bienestar.
+            Desde la agenda de citas hasta el seguimiento de la satisfacción del cliente,
+            todo en un solo lugar.
+        </p>
+        <p>
+            Ofrecemos una interfaz intuitiva y herramientas potentes para que tu equipo pueda concentrarse
+            en lo más importante: brindar servicios de relajación y belleza de alta calidad.
+        </p>
+    </div>
+    <div class="col-md-6 text-center">
+        <h2 class="text-dark-spa">Relájate y Disfruta</h2>
+        <p>
+            Imagina un lugar donde la tranquilidad y el bienestar son la prioridad.
+        </p>
+        <img src="https://media.istockphoto.com/id/1325095289/es/foto/primer-plano-de-la-naturaleza-muerta-de-un-arreglo-de-spa-tranquilo.jpg?s=612x612&w=0&k=20&c=rUCCOMGJU42uQVJjFeTbPfNA9VKVl02nGKpVQlsWOtg=" 
+            class="img-fluid rounded-3 shadow-lg mt-3" 
+            alt="Ambiente de Spa" 
+            style="max-height: 400px; object-fit: cover;">
+        <p class="text-muted mt-2"><small>Un ambiente relajante spa</small></p>
+    </div>
+</div>
+{% endblock %}
